@@ -6,21 +6,28 @@ BLUE_BOX: str = "\U0001F7E6"
 RED_BOX: str = "\U0001F7E5"
 WHITE_BOX: str = "\U00002B1C"
 
-p1: int= int(input("Pick a secret boat location between 1 and 4: "))
-p2: int= int(input("Guess a number between 1 and 4: "))
-
 result: str 
 boxes: str
 
+#player 1's pick
+p1: int= int(input("Pick a secret boat location between 1 and 4: "))
+
 if p1 > 4:
     print(f"Error! {p1} too high!")
+    exit()
 elif p1 < 1:
     print(f"Error! {p1} too low!")
+    exit()
+    
+#player 2's guess
+p2: int= int(input("Guess a number between 1 and 4: "))
 
 if p2 > 4:
     print(f"Error! {p2} too high!")
+    exit()
 elif p2 < 1:
     print(f"Error! {p2} too low!")
+    exit()
 
 #defining the result
 if p2 == p1:
@@ -43,7 +50,3 @@ if p2 == p1:
     print(f"Correct! You hit the ship.")
 else: 
     print(f"Incorrect! You missed the ship.")
-
-
-
-
