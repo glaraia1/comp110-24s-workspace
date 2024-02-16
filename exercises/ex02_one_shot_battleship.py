@@ -53,5 +53,9 @@ while row_idx <= grid_size:
 #hit or miss or close
 if row_guess == secret_row and column_guess == secret_column:
     print(f"Hit!")
+elif row_guess == secret_row and column_guess != secret_column:
+    print(f"Close! Correct row, wrong column.")
+elif row_guess != secret_row and column_guess == secret_column:
+    print(f"Close! Correct column, wrong row.")
 else:
     print (f"Miss!")
