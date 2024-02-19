@@ -1,6 +1,7 @@
 """ex03 functional battleship"""
 
 __author__= "730401354"
+import random
 
 def input_guess(grid_size: int, row_column: str) -> int:
     """Returns user row or column guess"""
@@ -63,13 +64,27 @@ def main(grid_size: int, secret_row: int, secret_column: int) -> None:
         row_guess: int = input_guess(grid_size, "row")
         column_guess: int =  input_guess(grid_size, "column")
         verify: bool = correct_guess(secret_row, secret_column, row_guess, column_guess)
-        if verify == True:
+        if verify == True: #guess is true, then box is red
             check_guess = True
             print_grid(grid_size, row_guess, column_guess, check_guess)
         else:
-            check_guess = False 
+            check_guess = False #guess is not true, box is white
             print_grid(grid_size, row_guess, column_guess, check_guess)
 
-        turn_idx += 1
+        if row_guess == secret_row and column_guess == secret_column:
+            track == True #the player wins the game
+            print (f"Hit!")
+            print(f"You won in {turn_idx}/5 turns!")
+        else: #not correct, player must go again
+            print(f"Miss!")
+            turn_idx += 1
+   
+    if turn_idx > 5:
+        print(f"X/5 - Better luck next time!")
+
+if __name__ == "__main__":
+    grid_size: int = random.randint(3,5)
+    main(grid_size, random.randint(1, grid_size), random.randint(1, grid_size))
+
     
     
