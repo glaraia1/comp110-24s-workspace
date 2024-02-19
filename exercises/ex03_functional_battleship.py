@@ -58,13 +58,18 @@ def main(grid_size: int, secret_row: int, secret_column: int) -> None:
     """Pull together all functions"""
     turn_idx: int = 1
     track: bool = False
-    check_guess: bool = True
     while turn_idx <= 5 and track != True:
         print(f"=== Turn {turn_idx}/5 ===")
         row_guess: int = input_guess(grid_size, "row")
         column_guess: int =  input_guess(grid_size, "column")
-        correct_guess(secret_row, secret_column, row_guess, column_guess)
-        print_grid(secret_row, secret_column, row_guess, column_guess)
+        verify: bool = correct_guess(secret_row, secret_column, row_guess, column_guess)
+        if verify == True:
+            check_guess = True
+            print_grid(grid_size, row_guess, column_guess, check_guess)
+        else:
+            check_guess = False 
+            print_grid(grid_size, row_guess, column_guess, check_guess)
+
         turn_idx += 1
     
     
