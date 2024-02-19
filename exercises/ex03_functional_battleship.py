@@ -58,24 +58,18 @@ def correct_guess(secret_row: int, secret_column: int, row_guess: int, column_gu
 def main(grid_size: int, secret_row: int, secret_column: int) -> None:
     """Pull together all functions"""
     turn_idx: int = 1
-    track: bool = False
-    while turn_idx <= 5 and track != True:
+    verify: bool = False
+    while turn_idx <= 5 and verify != True:
         print(f"=== Turn {turn_idx}/5 ===")
         row_guess: int = input_guess(grid_size, "row")
         column_guess: int =  input_guess(grid_size, "column")
         verify: bool = correct_guess(secret_row, secret_column, row_guess, column_guess)
-        if verify == True: #guess is true, then box is red
-            check_guess = True
-            print_grid(grid_size, row_guess, column_guess, check_guess)
-        else:
-            check_guess = False #guess is not true, box is white
-            print_grid(grid_size, row_guess, column_guess, check_guess)
+        print_grid(grid_size, row_guess, column_guess, verify)
 
-        if row_guess == secret_row and column_guess == secret_column:
-            track == True #the player wins the game
+        if verify:
             print (f"Hit!")
             print(f"You won in {turn_idx}/5 turns!")
-        else: #not correct, player must go again
+        else: 
             print(f"Miss!")
             turn_idx += 1
    
@@ -85,6 +79,3 @@ def main(grid_size: int, secret_row: int, secret_column: int) -> None:
 if __name__ == "__main__":
     grid_size: int = random.randint(3,5)
     main(grid_size, random.randint(1, grid_size), random.randint(1, grid_size))
-
-    
-    
