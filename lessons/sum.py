@@ -2,8 +2,9 @@
 
 __author__ = "730401354"
 
+
 def w_sum(vals: list[float]) -> float:
-    """returns sum of all elements."""
+    """Returns sum of all elements."""
     list_idx: float = 0
     list_sum: float = 0
     while list_idx < len(vals):
@@ -13,20 +14,23 @@ def w_sum(vals: list[float]) -> float:
 print(w_sum([1.1, 0.9, 1.0]))
 
 
-def f_sum(vals: list[float])-> float:
-    """returns sum of all elements."""
+def f_sum(vals: list[float]) -> float:
+    """Returns sum of all elements."""
     list_sum: float = 0
     for elem in vals:
         list_sum += elem
     return list_sum
+
+
 print(f_sum([1.1, 0.9, 1.0]))
 
 
-def f_range_sum(vals: list[float])-> float:
-    """returns sum of all elements."""
+def f_range_sum(vals: list[float]) -> float:
+    """Returns sum of all elements."""
     list_sum: float = 0
     for elem in range(len(vals)):
         list_sum += vals[elem]
     return list_sum
-print(f_range_sum([1.1, 0.9, 1.0]))
 
+
+print(f_range_sum([1.1, 0.9, 1.0]))
