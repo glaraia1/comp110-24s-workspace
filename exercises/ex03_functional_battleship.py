@@ -20,14 +20,10 @@ def print_grid(grid_size: int, row_guess: int, column_guess: int, check_guess: b
     RED_BOX: str = "\U0001F7E5"
     WHITE_BOX: str = "\U00002B1C"
     result: str = ""
-     
-  
     if check_guess:
         result = RED_BOX
     else:
         result = WHITE_BOX
-
-    #building the grid
     row_idx: int = 1
     while row_idx <= grid_size:
         single_row: str = ""
