@@ -28,8 +28,8 @@ print(f_sum([1.1, 0.9, 1.0]))
 def f_range_sum(vals: list[float]) -> float:
     """Returns sum of all elements."""
     list_sum: float = 0
-    for elem in range(len(vals)):
-        list_sum += vals[elem]
+    for index in range(0,len(vals)):
+        list_sum += vals[index]
     return list_sum
 
 
