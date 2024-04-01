@@ -1,6 +1,7 @@
 """Splitting a dictionary into two lists."""
 
-__author__: "730401354"
+__author__ = "730401354"
+
 
 def get_keys(dict1: dict[str, int]) -> list[str]:
     """Produce a list of all the keys in the input dictionary."""
@@ -12,7 +13,9 @@ def get_keys(dict1: dict[str, int]) -> list[str]:
             list1.append(key)
     return list1
 
+
 def get_values(dict2: dict[str, int]) -> list[int]:
+    """Produce a list of all the values in the input dictionary."""
     list2: list[int] = []
     for key in dict2:
         if len(dict2) == 0:
