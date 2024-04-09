@@ -13,8 +13,7 @@ def invert(dict1: dict[str, str]) -> dict[str, str]:
         new_dict[dict1[key]] = key
     return new_dict
     
-print(invert({'a': 'z', 'b' : 'y', 'c': 'x'}))
-
+    
 def favorite_color(name_color: dict[str, str]) -> str:
     """Returns most popular color."""
     track: dict[str, int] = {}
